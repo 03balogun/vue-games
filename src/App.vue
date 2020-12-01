@@ -5,7 +5,7 @@
         Player <strong>{{ currentPlayer }}</strong> is playing
       </span>
       <span v-else>
-        Player <strong>{{ winner }}</strong> win's this round.
+        Player <strong>{{ winner }}</strong> wins this round.
         <a href="javascript:" @click.prevent="resetGame">Reset the game</a> to play another round
       </span>
     </div>
