@@ -1,0 +1,143 @@
+$primary-color: #2c3e50;
+$border-size: solid 1px $primary-color;
+
+* {
+  box-sizing: border-box;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $primary-color;
+  margin: 10px auto;
+  max-width: 400px;
+  position: relative;
+}
+
+.my {
+  margin: 10px 0;
+}
+
+.game-board {
+  position: relative;
+  margin: auto;
+  display: grid;
+  grid-gap: 1px;
+  background-color: $primary-color;
+  border: $border-size;
+
+  .game-board__cell {
+    background-color: #fff;
+    height: 80px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.hoverAble {
+      &:active,
+      &:hover {
+        border: 2px solid #648864;
+      }
+    }
+
+    &.emptyCell {
+      pointer-events: none;
+      cursor: not-allowed;
+      background-color: #7a5542;
+      &:active,
+      &:hover {
+        border: 0;
+      }
+    }
+  }
+}
+
+.game__settings {
+  border: $border-size;
+  padding: 16px;
+  .fields {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      height: 50px;
+      width: 50px;
+      text-align: center;
+    }
+  }
+  span {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .game__settings--start {
+    height: 50px;
+    width: 50px;
+    margin-left: 10px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  &:before {
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(1.5px);
+    z-index: -1;
+  }
+
+  .overlay__content {
+    color: #fff;
+    text-align: center;
+    text-shadow: 1px 1px 5px #656565;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  &.overlay--green {
+    background-color: #52845f85;
+  }
+  &.overlay--orange {
+    background-color: #00000059;
+  }
+}
+
+.controls {
+  position: relative;
+  top: 0;
+  height: 50px;
+  border: $border-size;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  button {
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+  }
+}
+
