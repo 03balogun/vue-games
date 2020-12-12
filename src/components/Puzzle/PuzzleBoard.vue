@@ -37,6 +37,11 @@
     <div v-if="puzzle.showData" class="game_data my">
       GRID: {{ puzzle.grid }} <br />
     </div>
+    <footer>
+      <a href="https://github.com/03balogun/vue-games" target="_blank">
+        Github Repository
+      </a>
+    </footer>
   </div>
 </template>
 
